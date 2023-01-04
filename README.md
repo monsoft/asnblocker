@@ -32,7 +32,7 @@ sudo dnf install -y curl jq
 
 3. Create account in [ipinfo.io](https://ipinfo.io/) and copy API token.
 4. Modify TOKEN variable in `asnblocker.sh` script.
-5. Add list of ASN numbers (one number per line) to asn_list.txt file.
+5. Add list of ASN numbers (one number per line) to `asn_list.txt` file.
 6. Add below lines to the end of Postfix master.cf file:
 
 ```text
