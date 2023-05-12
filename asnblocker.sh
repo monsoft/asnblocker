@@ -68,6 +68,6 @@ if [ $? -eq 0 ]; then
 	echo ""
 else
 	# We are allowing access
-	echo "action=ok"
+	echo "action=dunno"
 	echo ""
 fi
