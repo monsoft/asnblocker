@@ -7,13 +7,13 @@
 #
 
 # https://ipinfo.io/ API token
-TOKEN="Your ipinfo.io API token"
+TOKEN="Blocked for policy reasons"
 
 # SMTP response message
 SMTP_DENY_MESSAGE="Bye"
 
 # SMTP deny code
-SMTP_DENY_CODE="521"
+SMTP_DENY_CODE="550"
 
 
 # File with ASN numbers to block
@@ -60,11 +60,12 @@ if [[ ! ${IP_ASN} =~ "AS" ]]; then
 	exit 1
 fi
 
-grep ${IP_ASN} ${ASN_FILE} > /dev/null
+# Modified grep to ignore lines beginning with # in the ASN_FILE so entries could be commented out 
+grep ${IP_ASN} ${ASN_FILE} | grep "^[^#]" > /dev/null
 
 if [ $? -eq 0 ]; then
 	# We are denying access
-	echo "action=${SMTP_DENY_CODE} ${SMTP_DENY_MESSAGE}"
+	echo "action=${SMTP_DENY_CODE} ${SMTP_DENY_MESSAGE} ${IP_ASN}"
 	echo ""
 else
 	# We are allowing access
