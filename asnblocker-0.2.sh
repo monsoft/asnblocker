@@ -66,7 +66,7 @@ reversed=$(reverseip $client_address)
 IP_ASN="AS$(dig +short ${reversed}.origin.asn.cymru.com TXT | cut -d "|" -f1 | cut --b 2-11)"
 
 # Because of prepending AS above, not sure if this really does anything, but it doesn't hurt so it stayed
-if [[ ! ${IP_ASN} =~ "AS" ]]; then
+if [[ ! ${IP_ASN} =~ AS[0-9]+ ]]; then
         echo "Unable to fetch ASN number."
         exit 1
 fi
