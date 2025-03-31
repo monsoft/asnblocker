@@ -30,7 +30,6 @@ check_commands () {
 
 # Check if curl & jq are installed
 check_commands curl
-check_commands jq
 
 # Load variables passed by Postfix
 while read attr; do
@@ -53,7 +52,7 @@ else
 	fi
 fi
 
-IP_ASN=$(curl -s "http://ipinfo.io/${client_address}?token=$TOKEN" | jq -r .org|cut -d " " -f1)
+IP_ASN=$(curl -s "http://ipinfo.io/${client_address}/org?token=$TOKEN" | cut -d " " -f1)
 
 if [[ ! ${IP_ASN} =~ "AS" ]]; then
 	echo "Unable to fetch ASN number. Please check ipinfo.io website"
