@@ -8,26 +8,33 @@ This script use [ipinfo.io](https://ipinfo.io/) API with free account. If you ru
 
 I'm running small smtp server to host my personal emails. Since two months, my server is daily bombarded by connection from Spam Servers hosted by LayerHost and company doesn't reacted to any abuse notification. I know, that blocking entire network block belongs to hosting company may be drastic, but it works for me and may works for you.
 
-## Installation & configuration ##
+## Versions of plugin ##
 
+Currently we have two versions of this plugin:
+* asnblocker.sh - use data from [ipinfo.io](https://ipinfo.io/) API. Thanks to @JaroslavHerber for version without`jq`
+* asnblocker-0.2.sh - use `dig` as source of data. Updated by Juppers in 2024 (Many THANKS !!!)
+
+## Installation & configuration ##
 1. Clone repository to `/opt` directory.
-2. Instal curl and jq application on your system:
+2. Instal curl application on your system:
 
 Debian/Ubuntu
 
 ```bash
-sudo apt install -y curl jq
+sudo apt install -y curl
+```
+or 
+```bash
+sudo apt install -y curl dnsutils
 ```
 
-Red Hat/CentOs 7
-
+Red Hat/CentOs/Rocky Linux/AlmaLinux 8,9
 ```bash
-sudo yum install -y curl jq
+sudo dnf install -y curl
 ```
-
-Red Hat/CentOs/Rocky Linux/AlmaLinux 8
+or
 ```bash
-sudo dnf install -y curl jq
+sudo dnf install -y curl bind-utils
 ```
 
 3. Create account in [ipinfo.io](https://ipinfo.io/) and copy API token.

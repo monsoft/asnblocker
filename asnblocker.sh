@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# asnblocker ver 0.1 
-# by Irek 'Monsoft' Pelech (c) 2023
+# asnblocker ver 0.2
+# by Irek 'Monsoft' Pelech (c) 2023,2025
 # 
-# Require curl, jq and grep
+# Require curl and grep
 #
 
 # https://ipinfo.io/ API token
@@ -28,7 +28,7 @@ check_commands () {
 	fi
 }
 
-# Check if curl & jq are installed
+# Check if curl is installed
 check_commands curl
 
 # Load variables passed by Postfix
