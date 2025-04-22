@@ -11,23 +11,23 @@ I'm running small smtp server to host my personal emails. Since two months, my s
 ## Installation & configuration ##
 
 1. Clone repository to `/opt` directory.
-2. Instal curl and jq application on your system:
+2. Install curl on your system:
 
 Debian/Ubuntu
 
 ```bash
-sudo apt install -y curl jq
+sudo apt install -y curl
 ```
 
 Red Hat/CentOs 7
 
 ```bash
-sudo yum install -y curl jq
+sudo yum install -y curl
 ```
 
 Red Hat/CentOs/Rocky Linux/AlmaLinux 8
 ```bash
-sudo dnf install -y curl jq
+sudo dnf install -y curl
 ```
 
 3. Create account in [ipinfo.io](https://ipinfo.io/) and copy API token.
